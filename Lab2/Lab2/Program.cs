@@ -11,6 +11,8 @@ namespace Lab2
         static void Main(string[] args)
         {
             Espotifai sp = new Espotifai();
+
+            //interfaz
             string stopper ="";
             Console.WriteLine("Bienvenido a Espotifai");
             while (stopper!="3")

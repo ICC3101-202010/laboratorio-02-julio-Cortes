@@ -20,7 +20,7 @@ namespace Lab2
             this.Artist = artist;
             this.Genre = genre;
         }
-            public string Informacion()
+        public string Informacion()
         {
             string info=("Nombre: " + Name + "\nAlbum: " + Album + "\nArtista: " +Artist+"\nGenre: "+Genre);
             return info;

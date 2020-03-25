@@ -35,7 +35,55 @@ namespace Lab2
                 Console.WriteLine(i.Informacion());
             }
         }
-
-
+        public Cancion[] CancionesPorCriterio(string criterio, string valor)
+        {
+            List<Cancion> cancionesvalidas = new List<Cancion>();
+            foreach (Cancion i in listofsongs)
+            {
+                switch (criterio)
+                {
+                    case "Nombre":
+                        if (i.Name == valor)
+                        {
+                            cancionesvalidas.Add(i);
+                        }
+                        break;
+                    case "Album":
+                        if (i.Album == valor)
+                        {
+                            cancionesvalidas.Add(i);
+                        }
+                        break;
+                    case "Artista":
+                        if (i.Artist == valor)
+                        {
+                            cancionesvalidas.Add(i);
+                        }
+                        break;
+                    case "Genero":
+                        if (i.Genre == valor)
+                        {
+                            cancionesvalidas.Add(i);
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("El criterio no es valido");
+                        Cancion[] cancionesinvalidas = { };
+                        return (cancionesinvalidas);
+                }
+            }
+            if (cancionesvalidas.Count!=0)
+                {
+                    Cancion[] arraycanciones = cancionesvalidas.ToArray();
+                    return arraycanciones;
+                }
+            else
+                {
+                    Cancion[] arraycanciones = cancionesvalidas.ToArray();
+                    return arraycanciones;
+                }
+                
+    	    
+        }
     }
 }
