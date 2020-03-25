@@ -5,3 +5,10 @@ C:\Users\jick\source\repos\Lab2\Lab2\bin\Debug\Lab2.exe
 C:\Users\jick\source\repos\Lab2\Lab2\bin\Debug\Lab2.pdb
 C:\Users\jick\source\repos\Lab2\Lab2\obj\Debug\Lab2.exe
 C:\Users\jick\source\repos\Lab2\Lab2\obj\Debug\Lab2.pdb
+C:\Users\jick\Desktop\P.O.O\laboratorio-02-julio-Cortes\Lab2\Lab2\bin\Debug\Lab2.exe.config
+C:\Users\jick\Desktop\P.O.O\laboratorio-02-julio-Cortes\Lab2\Lab2\bin\Debug\Lab2.exe
+C:\Users\jick\Desktop\P.O.O\laboratorio-02-julio-Cortes\Lab2\Lab2\bin\Debug\Lab2.pdb
+C:\Users\jick\Desktop\P.O.O\laboratorio-02-julio-Cortes\Lab2\Lab2\obj\Debug\Lab2.csprojAssemblyReference.cache
+C:\Users\jick\Desktop\P.O.O\laboratorio-02-julio-Cortes\Lab2\Lab2\obj\Debug\Lab2.csproj.CoreCompileInputs.cache
+C:\Users\jick\Desktop\P.O.O\laboratorio-02-julio-Cortes\Lab2\Lab2\obj\Debug\Lab2.exe
+C:\Users\jick\Desktop\P.O.O\laboratorio-02-julio-Cortes\Lab2\Lab2\obj\Debug\Lab2.pdb

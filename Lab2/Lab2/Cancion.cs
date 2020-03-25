@@ -12,8 +12,15 @@ namespace Lab2
         public string Album;
         public string Artist;
         public string Genre; //caracteristicas cancion
-
-        public string Informacion()
+        //constructor
+        public Cancion(string name, string album, string artist, string genre)
+        {
+            this.Name = name;
+            this.Album = album;
+            this.Artist = artist;
+            this.Genre = genre;
+        }
+            public string Informacion()
         {
             string info=("Nombre: " + Name + "\nAlbum: " + Album + "\nArtista: " +Artist+"\nGenre: "+Genre);
             return info;

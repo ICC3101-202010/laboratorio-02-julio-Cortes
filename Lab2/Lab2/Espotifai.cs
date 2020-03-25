@@ -6,7 +6,36 @@ using System.Threading.Tasks;
 
 namespace Lab2
 {
-    class Espotifai
+    public class Espotifai
     {
+        public Espotifai()//Constructor Default
+        {
+
+        }
+        public List<Cancion> listofsongs = new List<Cancion>();//
+        //Metodos
+
+        public bool AgregarCancion(Cancion cancion)
+        {
+            if (listofsongs.Contains(cancion))
+            {
+                return false;
+            }
+            else
+            {
+                listofsongs.Add(cancion);
+                return true;
+            }
+        }
+
+        public void VerCancion()
+        {
+            foreach (Cancion i in listofsongs)
+            {
+                Console.WriteLine(i.Informacion());
+            }
+        }
+
+
     }
 }
