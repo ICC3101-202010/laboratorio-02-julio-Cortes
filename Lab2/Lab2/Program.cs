@@ -15,10 +15,10 @@ namespace Lab2
             //interfaz
             string stopper ="";
             Console.WriteLine("Bienvenido a Espotifai");
-            while (stopper!="3")
+            while (stopper!="4")
             {
                 Console.WriteLine("\nque funcion desea utilizar?\n");
-                Console.WriteLine("(1)Agregar Cancion \n(2)VerCanciones \n(3)Ver canciones por criterio \n(4)Salir del programa");
+                Console.WriteLine("(1)Agregar Cancion \n(2)VerCanciones \n(3)Ver canciones por criterio \n(4)Salir del programa\n");
                 stopper= Console.ReadLine();
                 switch (stopper)
                 {
@@ -36,15 +36,14 @@ namespace Lab2
                         string nameofgenre = Console.ReadLine();
 
                         Cancion cancion = new Cancion(nameofsong, nameofalbum, nameofartist, nameofgenre);
-                        sp.AgregarCancion(cancion);
-
-                        if (sp.AgregarCancion(cancion))
+                        bool comprobador = sp.AgregarCancion(cancion);
+                        if (comprobador)
                         {
-                            Console.WriteLine("La Cancion se anadio correctamente");
+                            Console.WriteLine("\nLa Cancion se anadio correctamente");
                         }
                         else
                         {
-                            Console.WriteLine("/mLa cancion ya se encuentra en el repertorio");
+                            Console.WriteLine("\nLa cancion ya se encuentra en el repertorio");
                         }
                         break;
 

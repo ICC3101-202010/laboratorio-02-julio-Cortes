@@ -17,14 +17,28 @@ namespace Lab2
 
         public bool AgregarCancion(Cancion cancion)
         {
-            if (listofsongs.Contains(cancion))
-            {
-                return false;
-            }
-            else
+            if (listofsongs.Count == 0)
             {
                 listofsongs.Add(cancion);
                 return true;
+
+            }
+            else
+            {
+                foreach (Cancion i in listofsongs)
+                {
+                    if (i.Informacion() == cancion.Informacion())
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        listofsongs.Add(cancion);
+                        return true;
+                    }
+                }
+                return true;
+
             }
         }
 
