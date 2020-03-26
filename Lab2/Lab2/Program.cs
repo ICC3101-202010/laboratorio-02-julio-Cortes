@@ -10,19 +10,20 @@ namespace Lab2
     {
         static void Main(string[] args)
         {
+            string DEFAULT_STOPPER ="4";
             Espotifai sp = new Espotifai();
 
             //interfaz
             string stopper ="";
             Console.WriteLine("Bienvenido a Espotifai");
-            while (stopper!="4")
+            while (stopper!=DEFAULT_STOPPER)
             {
                 Console.WriteLine("\nque funcion desea utilizar?\n");
                 Console.WriteLine("(1)Agregar Cancion \n(2)VerCanciones \n(3)Ver canciones por criterio \n(4)Salir del programa\n");
                 stopper= Console.ReadLine();
                 switch (stopper)
                 {
-                    case "1":
+                    case "1":// Agregar Cancion
                         Console.WriteLine("Ingrese el nombre de la cancion: ");
                         string nameofsong = Console.ReadLine();
 
@@ -47,17 +48,23 @@ namespace Lab2
                         }
                         break;
 
-                    case "2":
+                    case "2"://Ver cancion
                         sp.VerCancion();
                         break;
 
-                    case "3":
+
+                    case "3": //Canciones por criterio
                         Console.WriteLine("Ingrese el criterio a utilizar: ");
                         string criterio = Console.ReadLine();
                         Console.WriteLine("Ingrese el valor del criterio: ");
                         string valor = Console.ReadLine();
-                        sp.CancionesPorCriterio(criterio, valor);
+                        List<Cancion>cancionesvalidas=sp.CancionesPorCriterio(criterio, valor);
+                        foreach (Cancion i in cancionesvalidas)
+                        {
+                            Console.WriteLine(i.Informacion());
+                        }
                         break;
+
                     case "4":
                         break;
                     default:

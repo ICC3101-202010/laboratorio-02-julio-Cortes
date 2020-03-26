@@ -49,52 +49,50 @@ namespace Lab2
                 Console.WriteLine(i.Informacion());
             }
         }
-        public Cancion[] CancionesPorCriterio(string criterio, string valor)
+        public List<Cancion> CancionesPorCriterio(string criterio, string valor)
         {
             List<Cancion> cancionesvalidas = new List<Cancion>();
             foreach (Cancion i in listofsongs)
             {
                 switch (criterio)
                 {
-                    case "Nombre":
-                        if (i.Name == valor)
+                    case "nombre":
+                        if (i.Name1 == valor)
                         {
                             cancionesvalidas.Add(i);
                         }
                         break;
-                    case "Album":
-                        if (i.Album == valor)
+                    case "album":
+                        if (i.Album1 == valor)
                         {
                             cancionesvalidas.Add(i);
                         }
                         break;
-                    case "Artista":
-                        if (i.Artist == valor)
+                    case "artista":
+                        if (i.Artist1 == valor)
                         {
                             cancionesvalidas.Add(i);
                         }
                         break;
-                    case "Genero":
-                        if (i.Genre == valor)
+                    case "genero":
+                        if (i.Genre1 == valor)
                         {
                             cancionesvalidas.Add(i);
                         }
                         break;
                     default:
                         Console.WriteLine("El criterio no es valido");
-                        Cancion[] cancionesinvalidas = { };
-                        return (cancionesinvalidas);
+                        return (cancionesvalidas);
                 }
             }
-            if (cancionesvalidas.Count!=0)
+            if (cancionesvalidas.Count()==0)
                 {
-                    Cancion[] arraycanciones = cancionesvalidas.ToArray();
-                    return arraycanciones;
+                Console.WriteLine("No se encontraron canciones, con el criterio solicitado");
+                   return cancionesvalidas;
                 }
             else
                 {
-                    Cancion[] arraycanciones = cancionesvalidas.ToArray();
-                    return arraycanciones;
+                   return cancionesvalidas;
                 }
                 
     	    
