@@ -12,8 +12,9 @@ namespace Lab2
         {
 
         }
-        public List<Cancion> listofsongs = new List<Cancion>();//
-        //Metodos
+        private List<Playlist> listofplaylist = new List<Playlist>();//lista de playlist
+        private List<Cancion> listofsongs = new List<Cancion>();//lista de canciones
+    
 
         public bool AgregarCancion(Cancion cancion)
         {
@@ -40,7 +41,7 @@ namespace Lab2
                 return true;
 
             }
-        }
+        } //Metodos
 
         public void VerCancion()
         {
@@ -48,7 +49,7 @@ namespace Lab2
             {
                 Console.WriteLine(i.Informacion());
             }
-        }
+        } //Metodos
         public List<Cancion> CancionesPorCriterio(string criterio, string valor)
         {
             List<Cancion> cancionesvalidas = new List<Cancion>();
@@ -92,10 +93,11 @@ namespace Lab2
                 }
             else
                 {
+                Console.WriteLine("\nSe encontraron las siguientes canciones:");
                    return cancionesvalidas;
                 }
-                
-    	    
-        }
+
+
+        } //Metodos
     }
 }

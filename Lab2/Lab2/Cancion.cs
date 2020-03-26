@@ -15,6 +15,11 @@ namespace Lab2
         //constructor
         public Cancion(string name, string album, string artist, string genre)
         {
+            if (name == "") { name = "Unknown"; }
+            if (album == "") { album = "Unknown"; }
+            if (artist == "") { artist = "Unknown"; }
+            if (genre == "") { genre = "Unknown"; }
+
             this.Name = name;
             this.Album = album;
             this.Artist = artist;
