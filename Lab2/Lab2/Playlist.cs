@@ -22,7 +22,8 @@ namespace Lab2
             string info = "El nombre de la playlist es: " + Name + " \ny las canciones que se encuentran en ella son: \n";
             foreach (Cancion i in Listcanciones)
             {
-                info += i.Informacion()+"\n";
+                info +="\n"+i.Informacion()+"\n";
+
             }
             return info;
         }

@@ -24,7 +24,7 @@ namespace Lab2
                 switch (stopper)
                 {
                     case "1":// Agregar Cancion
-                        Console.WriteLine("Ingrese el nombre de la cancion: ");
+                        Console.WriteLine("\nIngrese el nombre de la cancion: ");
                         string nameofsong = Console.ReadLine();
 
                         Console.WriteLine("Ingrese el nombre del album: ");
