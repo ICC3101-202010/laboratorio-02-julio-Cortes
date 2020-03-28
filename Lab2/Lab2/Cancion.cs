@@ -12,13 +12,18 @@ namespace Lab2
         private string Album;
         private string Artist;
         private string Genre; //caracteristicas cancion
-        //constructor
-        public Cancion(string name, string album, string artist, string genre)
+
+        public string Album1 { get => Album; set => Album = value; }
+        public string Name1 { get => Name; set => Name = value; }
+        public string Artist1 { get => Artist; set => Artist = value; }
+        public string Genre1 { get => Genre; set => Genre = value; }//get y set
+
+        public Cancion(string name, string album, string artist, string genre) //constructor
         {
             if (name == "") { name = "Unknown"; }
             if (album == "") { album = "Unknown"; }
             if (artist == "") { artist = "Unknown"; }
-            if (genre == "") { genre = "Unknown"; }
+            if (genre == "") { genre = "Unknown"; }//caso en que el usuario no ponga nada
 
             this.Name = name;
             this.Album = album;
@@ -26,16 +31,11 @@ namespace Lab2
             this.Genre = genre;
         }
 
-        public string Album1 { get => Album; set => Album = value; }
-        public string Name1 { get => Name; set => Name = value; }
-        public string Artist1 { get => Artist; set => Artist = value; }
-        public string Genre1 { get => Genre; set => Genre = value; }
-
         public string Informacion()
         {
             string info=("Nombre: " + Name + "\nAlbum: " + Album + "\nArtista: " +Artist+"\nGenre: "+Genre);
             return info;
-        }
+        }//metodo
 
 
 

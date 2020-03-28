@@ -12,48 +12,46 @@ namespace Lab2
         {
 
         }
-        private List<Playlist> listofplaylist = new List<Playlist>();//lista de playlist
-        private List<Cancion> listofsongs = new List<Cancion>();//lista de canciones
-    
+        private List<Cancion> Listofsongs = new List<Cancion>();//lista de canciones
+        private List<Playlist> Listofplaylist = new List<Playlist>();//lista de playlist
 
         public bool AgregarCancion(Cancion cancion)
         {
-            if (listofsongs.Count == 0)
+            if (Listofsongs.Count == 0)
             {
-                listofsongs.Add(cancion);
+                Listofsongs.Add(cancion);
                 return true;
 
             }
             else
             {
-                foreach (Cancion i in listofsongs)
+                foreach (Cancion i in Listofsongs)
                 {
                     if (i.Informacion() == cancion.Informacion())
                     {
                         return false;
                     }
-                    else
-                    {
-                        listofsongs.Add(cancion);
-                        return true;
-                    }
                 }
+
+                Listofsongs.Add(cancion);
                 return true;
+
 
             }
         } //Metodos
 
         public void VerCancion()
         {
-            foreach (Cancion i in listofsongs)
+            foreach (Cancion i in Listofsongs)
             {
-                Console.WriteLine(i.Informacion());
+                Console.WriteLine(i.Informacion()+"\n");
             }
         } //Metodos
+
         public List<Cancion> CancionesPorCriterio(string criterio, string valor)
         {
             List<Cancion> cancionesvalidas = new List<Cancion>();
-            foreach (Cancion i in listofsongs)
+            foreach (Cancion i in Listofsongs)
             {
                 switch (criterio)
                 {
@@ -93,11 +91,53 @@ namespace Lab2
                 }
             else
                 {
-                Console.WriteLine("\nSe encontraron las siguientes canciones:");
-                   return cancionesvalidas;
+                Console.WriteLine("\nSe encontraron las siguientes canciones:\n");
+                foreach (Cancion i in cancionesvalidas)
+                {
+                    Console.WriteLine(i.Informacion() + "\n");
                 }
+                  return cancionesvalidas;
+            }
 
 
         } //Metodos
+
+        public bool GenerarPlaylist(string criterio, string valorCriterio, string nombrePlaylist)
+        {
+            List<Cancion> cancionesvalidas = CancionesPorCriterio(criterio, valorCriterio);
+            Playlist playlist = new Playlist(nombrePlaylist, cancionesvalidas);
+            if (cancionesvalidas.Count()==0)
+            {
+                return false;
+            }
+            if (Listofplaylist.Count != 0)
+            {
+                foreach (Playlist i in Listofplaylist)
+                {
+                    if (i.Informacion()==playlist.Informacion())
+                    {
+                        Console.WriteLine("Ya existe una playlist con ese nombre");
+                        return false;
+                    }
+
+                }
+                
+            }
+
+            Listofplaylist.Add(playlist);
+            return true;
+        }//Metodos
+
+        public string VerMisPlaylist()
+        {
+            string info = "Las playlist son: \n";
+            foreach (Playlist i in Listofplaylist)
+            {
+                info += i.Informacion()+"\n";
+            }
+            return info;
+        }
+
     }
 }
+
